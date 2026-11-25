@@ -29,6 +29,9 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
+      - name: Check Repository Structure
+        shell: bash
+        run: bash scripts/check-repository.sh "$PROJECT_PATH"
 
       - name: Restore dependencies
         shell: bash
